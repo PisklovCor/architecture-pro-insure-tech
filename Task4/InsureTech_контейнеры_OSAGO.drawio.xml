@@ -1,0 +1,198 @@
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" modified="2025-12-01T10:00:00.000Z" version="22.1.22" etag="OSAGO-Architecture" type="embed">
+  <diagram name="OSAGO Architecture" id="osago-architecture">
+    <mxGraphModel dx="2500" dy="3000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="deployment-zone" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:22px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;InsureTech Prod [Kubernetes Cluster]&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;dashed=1;strokeWidth=2;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="480" y="40" width="1200" height="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="client" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:22px;font-family:Arial;color:#000000&quot;&gt;Клиент&lt;/font&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="310" y="-390" width="60" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="web" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;InsureTech Web&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: JavaScript, React]&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="240" y="-160" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="client-info" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;client-info&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="240" y="200" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="client-db" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;ins-comp-settlement-db&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: PostgreSQL]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;(client data)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="240" y="380" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="core-app" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;core-app&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#ff0000&quot;&gt;Монолитное приложение&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Transactional Outbox&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;WebSocket Server&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="520" y="80" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="core-db" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;core-db&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: PostgreSQL]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Outbox Table&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="520" y="260" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="osago-aggregator" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;osago-aggregator&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Circuit Breaker&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Retry, Timeout&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;WebSocket Server&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="800" y="80" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="osago-db" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;osago-aggregator-db&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: PostgreSQL]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;(requests, offers)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="800" y="260" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="redis" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Redis&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Redis]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;Distributed Locks&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="800" y="400" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="product-aggregator" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;ins-product-aggregator&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Event Publisher&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="80" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="settlement" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;ins-comp-settlement&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#0066cc&quot;&gt;Event Consumer&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="520" y="500" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="settlement-db" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;ins-comp-settlement-db&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: PostgreSQL]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;(settlement data)&lt;/font&gt;&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="520" y="720" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:20px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Message Broker&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Apache Kafka]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;Topics:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;• products.updated&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;• policies.created&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="300" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="outbox-processor" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Outbox Processor&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Container: Kotlin, SpringBoot]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;Polling Outbox Table&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="790" y="800" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="payment" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Платежный сервис&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Software System]&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="-60" y="400" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="partners" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Системы партнеров&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Software System]&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="520" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="insurance-companies" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:18px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Системы страховых компаний&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#666666&quot;&gt;[Software System]&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;(5-10 компаний)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;REST API:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;• создать заявку&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#666666&quot;&gt;• получить предложение&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="1400" y="-120" width="240" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;" parent="1" source="client" target="web" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;horizontal=0;" parent="1" source="web" target="client-info" edge="1">
+          <mxGeometry x="-0.1429" y="-20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;horizontal=0;" parent="1" source="client-info" target="client-db" edge="1">
+          <mxGeometry y="-10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="REST&lt;br&gt;Rate Limiting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="web" target="core-app" edge="1">
+          <mxGeometry x="-0.5385" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="WebSocket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0066cc;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="web" target="core-app" edge="1">
+          <mxGeometry x="-0.2" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="340" y="-120" />
+              <mxPoint x="630" y="-120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" value="TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="core-app" target="core-db" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" value="REST&lt;br&gt;Rate Limiting&lt;br&gt;Retry" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="core-app" target="osago-aggregator" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" value="WebSocket" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0066cc;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="osago-aggregator" target="core-app" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="150" />
+              <mxPoint x="630" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge9" value="TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="osago-aggregator" target="osago-db" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" value="TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="osago-aggregator" target="redis" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" value="REST&lt;br&gt;Circuit Breaker&lt;br&gt;Retry&lt;br&gt;Timeout (10s)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="osago-aggregator" target="insurance-companies" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="150" />
+              <mxPoint x="1520" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge12" value="REST&lt;br&gt;Circuit Breaker&lt;br&gt;Timeout (5s)&lt;br&gt;Polling" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="osago-aggregator" target="insurance-companies" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="180" />
+              <mxPoint x="1520" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge13" value="Polling" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0066cc;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="core-db" target="outbox-processor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge14" value="Publish" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;labelBackgroundColor=#ffffff;" parent="1" source="outbox-processor" target="kafka" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge15" value="REST/SOAP/GraphQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="product-aggregator" target="insurance-companies" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="130" />
+              <mxPoint x="1520" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge16" value="Publish&lt;br&gt;products.updated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;labelBackgroundColor=#ffffff;" parent="1" source="product-aggregator" target="kafka" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge17" value="Subscribe&lt;br&gt;products.updated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;labelBackgroundColor=#ffffff;" parent="1" source="kafka" target="core-app" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="370" />
+              <mxPoint x="630" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge18" value="Subscribe&lt;br&gt;products.updated" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;labelBackgroundColor=#ffffff;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="kafka" target="settlement" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="685" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge19" value="Subscribe&lt;br&gt;policies.created" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#d79b00;labelBackgroundColor=#ffffff;" parent="1" source="kafka" target="settlement" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge20" value="TCP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666666;labelBackgroundColor=#ffffff;" parent="1" source="settlement" target="settlement-db" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge21" value="HTTP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="core-app" target="payment" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="140" />
+              <mxPoint x="170" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge22" value="REST" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#b85450;dashed=1;labelBackgroundColor=#ffffff;" parent="1" source="core-app" target="partners" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="160" />
+              <mxPoint x="170" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="comment1" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;OSAGO Flow:&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;1. Web → core-app (REST)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;2. core-app → osago-aggregator (REST)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;3. osago-aggregator → страховые&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;   компании (параллельно)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;4. Опрос решений (асинхронно)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;5. WebSocket push предложений&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="80" y="640" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="comment2" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Паттерны отказоустойчивости:&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Rate Limiting: Web→core-app,&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  core-app→osago-aggregator&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Circuit Breaker: osago-aggregator&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  → страховые компании&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Retry: osago-aggregator →&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  страховые компании&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Timeout: 10s (создание),&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  5s (опрос), 60s (общий)&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1350" y="240" width="290" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="comment3" value="&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:16px;font-family:Arial;color:#000000&quot;&gt;&lt;b&gt;Множественные экземпляры:&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Redis для распределенных&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  блокировок при опросе&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Sticky sessions для WebSocket&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;• Транзакционная обработка&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 1px&quot;&gt;&lt;font style=&quot;font-size:14px;font-family:Arial;color:#000000&quot;&gt;  в БД для консистентности&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;align=left;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="1350" y="500" width="290" height="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
