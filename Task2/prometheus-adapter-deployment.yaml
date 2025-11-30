@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-adapter
+  namespace: monitoring
+  labels:
+    app: prometheus-adapter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus-adapter
+  template:
+    metadata:
+      labels:
+        app: prometheus-adapter
+    spec:
+      serviceAccountName: prometheus-adapter
+      containers:
+      - name: prometheus-adapter
+        image: directxman12/k8s-prometheus-adapter:latest
+        args:
+          - --cert-dir=/var/run/serving-cert
+          - --config=/etc/adapter/config.yaml
+          - --logtostderr=true
+          - --prometheus-url=http://prometheus.monitoring.svc:9090/
+          - --metrics-relist-interval=1m
+          - --v=4
+        volumeMounts:
+        - name: config
+          mountPath: /etc/adapter
+        - name: serving-cert
+          mountPath: /var/run/serving-cert
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+      volumes:
+      - name: config
+        configMap:
+          name: adapter-config
+      - name: serving-cert
+        emptyDir: {}
+
