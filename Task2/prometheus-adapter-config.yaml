@@ -16,12 +16,4 @@ data:
           matches: "^(.*)_total"
           as: "${1}_per_second"
         metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m])) by (<<.GroupBy>>)'
-      - seriesQuery: 'http_requests_total{namespace!="default"}'
-        resources:
-          overrides:
-            namespace: {resource: "namespace"}
-        name:
-          matches: "^(.*)_total"
-          as: "${1}_per_second"
-        metricsQuery: 'sum(rate(<<.Series>>{<<.LabelMatchers>>}[2m]))'
 

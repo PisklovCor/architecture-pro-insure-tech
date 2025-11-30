@@ -2,7 +2,7 @@ from locust import HttpUser, constant, task
 
 
 class WebsiteUser(HttpUser):
-    host = "http://127.0.0.1:64754"
+    host = "http://127.0.0.1:50769"
     wait_time = constant(0.05)
 
     @task

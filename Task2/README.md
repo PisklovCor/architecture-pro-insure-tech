@@ -42,6 +42,7 @@ kubectl apply -f prometheus-adapter-rbac.yaml
 kubectl apply -f prometheus-adapter-deployment.yaml
 kubectl apply -f prometheus-adapter-service.yaml
 kubectl apply -f prometheus-adapter-api-service.yaml
+kubectl apply -f prometheus-adapter-apiservice.yaml
 
 # 3. Настройка HPA для RPS
 kubectl delete -f hpa-memory.yaml  # Удалить старый HPA
@@ -123,6 +124,12 @@ kubectl get pods -l app=scaletestapp
 # Дождитесь, пока под перейдет в состояние Running
 kubectl wait --for=condition=ready pod -l app=scaletestapp --timeout=60s
 ```
+
+**Важно:** В deployment.yaml настроены:
+- Memory requests: 15Mi (для корректной работы HPA)
+- Memory limits: 30Mi
+- CPU requests: 100m (необходимо для стабильной работы HPA)
+- CPU limits: 200m
 
 ### Шаг 4: Создание Service
 
@@ -329,6 +336,9 @@ kubectl apply -f prometheus-adapter-service.yaml
 # Создайте API Service для метрик
 kubectl apply -f prometheus-adapter-api-service.yaml
 
+# Создайте APIService для регистрации метрик в Kubernetes API
+kubectl apply -f prometheus-adapter-apiservice.yaml
+
 # Проверьте статус адаптера
 kubectl get pods -n monitoring | grep prometheus-adapter
 
@@ -446,6 +456,7 @@ kubectl delete -f hpa-memory.yaml
 kubectl delete -f hpa-rps.yaml
 
 # Удаление Prometheus и связанных ресурсов
+kubectl delete -f prometheus-adapter-apiservice.yaml
 kubectl delete -f prometheus-adapter-api-service.yaml
 kubectl delete -f prometheus-adapter-service.yaml
 kubectl delete -f prometheus-adapter-deployment.yaml
@@ -486,6 +497,21 @@ kubectl top nodes
 kubectl describe hpa <hpa-name>
 ```
 
+### Проблема: HPA не масштабирует при превышении порога утилизации памяти
+
+**Решение:**
+```bash
+# Проверьте фактическое потребление памяти
+kubectl top pods -l app=scaletestapp
+
+# Проверьте, что memory requests установлены корректно
+kubectl describe deployment scaletestapp | grep -A 5 "Requests:"
+
+# Убедитесь, что CPU requests также установлены (необходимо для HPA)
+# Если утилизация близка к порогу (например, 81% при пороге 80%), 
+# увеличьте нагрузку или уменьшите memory requests в deployment.yaml
+```
+
 ### Проблема: Prometheus не видит метрики приложения
 
 **Решение:**
@@ -513,7 +539,16 @@ kubectl get configmap adapter-config -n monitoring -o yaml
 
 # Убедитесь, что Prometheus доступен из адаптера
 kubectl exec -n monitoring -it deployment/prometheus-adapter -- wget -O- http://prometheus.monitoring.svc:9090/api/v1/query?query=up
+
+# Проверьте статус APIService
+kubectl get apiservice v1beta1.metrics.k8s.io
+kubectl describe apiservice v1beta1.metrics.k8s.io
 ```
+
+### Проблема: Ошибка "Invalid value: v1beta1.metrics.k8s.io" при применении Service
+
+**Решение:**
+Имя Service не может содержать точки. Используйте файл `prometheus-adapter-api-service.yaml` с именем `prometheus-adapter-api`, а для регистрации метрик в Kubernetes API используйте отдельный файл `prometheus-adapter-apiservice.yaml` с APIService ресурсом.
 
 ## Дополнительные настройки
 

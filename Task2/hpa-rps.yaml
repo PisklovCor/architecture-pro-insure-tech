@@ -10,13 +10,10 @@ spec:
   minReplicas: 1
   maxReplicas: 10
   metrics:
-  - type: External
-    external:
+  - type: Pods
+    pods:
       metric:
         name: http_requests_per_second
-        selector:
-          matchLabels:
-            namespace: default
       target:
         type: AverageValue
         averageValue: "10"
