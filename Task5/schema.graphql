@@ -1,0 +1,36 @@
+# GraphQL Schema для сервиса управления клиентскими данными
+
+# Тип клиента
+type Client {
+  id: ID!
+  name: String!
+  age: Int!
+  # Связи с другими сущностями (опциональные, запрашиваются по необходимости)
+  documents: [Document!]
+  relatives: [Relative!]
+}
+
+# Тип документа
+type Document {
+  id: ID!
+  type: String!
+  number: String!
+  issueDate: String!
+  expiryDate: String!
+}
+
+# Тип родственника
+type Relative {
+  id: ID!
+  relationType: String!
+  name: String!
+  age: Int!
+}
+
+# Корневой тип запросов
+type Query {
+  # Получить информацию о клиенте по ID
+  # Позволяет запросить только нужные поля и связанные данные
+  client(id: ID!): Client
+}
+
